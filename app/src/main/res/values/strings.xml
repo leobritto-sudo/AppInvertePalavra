@@ -3,4 +3,6 @@
     <string name="btnInverter">Inverter</string>
     <string name="btnLimpar">Limpar</string>
     <string name="eTxt1"></string>
+    <string name="txtResult">Seu texto invertido:</string>
+    <string name="btnVoltar">Voltar</string>
 </resources>

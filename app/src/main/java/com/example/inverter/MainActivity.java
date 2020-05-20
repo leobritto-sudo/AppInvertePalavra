@@ -2,6 +2,7 @@ package com.example.inverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
             }
             public void Inverter (View view)
             {
+                openNextActivity();
+            }
+
+            public void openNextActivity()
+            {
                 StringBuilder sb  = new StringBuilder();
                 for (int i = 0; i < eTxt1.length(); i++) {
                     char ch = eTxt1.getText().toString().charAt(i);
@@ -37,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     sb.append(i % 2 == 0 ? (char) (ch & 95) : (char)(ch | 32));
                 }
-                eTxt1.setText(new StringBuilder(sb).reverse().toString());
-
+                String resu = new StringBuilder(sb).reverse().toString();
+                Intent intent = new Intent(this, InversoActivity.class);
+                intent.putExtra("resultado", resu);
+                startActivity(intent);
             }
         }
 
